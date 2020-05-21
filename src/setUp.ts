@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
-import { getSetUpFolders } from './folders';
-import { createFolder } from './sharedFunctions';
+import { getSetUpFolders } from './utils/folders';
+import { createFolder } from './utils/sharedFunctions';
 
 /**
  * Shows an input box using window.showInputBox().
