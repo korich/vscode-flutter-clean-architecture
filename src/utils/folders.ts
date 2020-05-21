@@ -1,4 +1,4 @@
-export function getFolders(): string[] {
+export function getFeatureFolders(): string[] {
   let list: string[] = [
     'data/datasources',
     'data/models',
@@ -9,6 +9,15 @@ export function getFolders(): string[] {
     'presentation/bloc',
     'presentation/pages',
     'presentation/widgets'
+  ];
+
+  return list;
+}
+
+export function getSetUpFolders(): string[] {
+  let list: string[] = [
+    'core/error',
+    'core/usecases'
   ];
 
   return list;

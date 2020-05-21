@@ -5,7 +5,8 @@
 
 import * as vscode from 'vscode';
 
-import { getFolders } from './folders';
+import { getFeatureFolders } from './folders';
+import { createFolder } from './sharedFunctions';
 
 /**
  * Shows an input box using window.showInputBox().
@@ -32,7 +33,7 @@ export async function createFeature() {
 function createFolders(feature: string, includeDotKeep: boolean): void {
   if (vscode.workspace.workspaceFolders !== undefined) {
 
-    for (let folder of getFolders()) {
+    for (let folder of getFeatureFolders()) {
       createFolder('lib/features/' + feature + '/' + folder, includeDotKeep);
       createFolder('test/features/' + feature + '/' + folder, includeDotKeep);
     }
@@ -42,19 +43,3 @@ function createFolders(feature: string, includeDotKeep: boolean): void {
   }
 }
 
-function createFolder(path: string, includeDotKeep: boolean) {
-  const wsedit = new vscode.WorkspaceEdit();
-
-  if (vscode.workspace.workspaceFolders !== undefined) {
-    const wsPath = vscode.workspace.workspaceFolders[0].uri.fsPath;
-    const filePath = vscode.Uri.file(wsPath + '/' + path + '/.keep');
-    wsedit.createFile(filePath, { ignoreIfExists: true });
-
-    if (includeDotKeep === false) {
-      wsedit.deleteFile(filePath);
-    }
-
-    vscode.workspace.applyEdit(wsedit);
-  }
-  
-}

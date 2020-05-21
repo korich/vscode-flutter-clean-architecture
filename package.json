@@ -12,7 +12,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:korich-fca.createFeature"
+		"onCommand:korich-fca.createFeature",
+		"onCommand:korich-fca.setUp"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -20,6 +21,10 @@
 			{
 				"command": "korich-fca.createFeature",
 				"title": "Flutter: Create Feature"
+			},
+			{
+				"command": "korich-fca.setUp",
+				"title": "Flutter: Set Up Clean Architecture Project"
 			}
 		]
 	},
