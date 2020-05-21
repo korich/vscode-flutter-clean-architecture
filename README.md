@@ -1,6 +1,6 @@
-# flutter-clean-architecture-kea-zone README
+# korich-fca README
 
-This is the README for your extension "flutter-clean-architecture-kea-zone". After writing up a brief description, we recommend including the following sections.
+This is the README for your extension "korich-fca". After writing up a brief description, we recommend including the following sections.
 
 ## Features
 
