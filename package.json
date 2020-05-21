@@ -1,6 +1,7 @@
 {
-	"name": "korich-fca",
+	"name": "flutter-clean-architecture",
 	"displayName": "Flutter Clean Architecture",
+	"publisher": "korich",
 	"description": "",
 	"version": "0.0.1",
 	"engines": {
