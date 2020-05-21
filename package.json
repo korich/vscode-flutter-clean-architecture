@@ -2,6 +2,7 @@
 	"name": "flutter-clean-architecture",
 	"displayName": "Flutter Clean Architecture",
 	"publisher": "korich",
+	"repository": "https://github.com/korich/vscode-flutter-clean-architecture",
 	"description": "",
 	"version": "1.0.0",
 	"engines": {
