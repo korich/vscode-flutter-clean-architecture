@@ -7,10 +7,8 @@ import { createFolder } from './utils/sharedFunctions';
  * Shows an input box using window.showInputBox().
  */
 export async function setUpProject() {
-  let i = 0;
 	const includeDotKeep = await vscode.window.showQuickPick(['yes', 'no'], {
-		placeHolder: 'include .keep',
-    onDidSelectItem: item => {}
+		placeHolder: 'include .keep'
 	});
 
   createFolders(includeDotKeep === 'yes');
