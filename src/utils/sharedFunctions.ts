@@ -6,6 +6,9 @@ export function createFolder(path: string, includeDotKeep: boolean) {
   const wsedit = new vscode.WorkspaceEdit();
   
   const wsPath = getWorkspaceFolder(undefined);
+
+  
+
   const filePath = vscode.Uri.file(wsPath + '/' + path + '/.keep');
   wsedit.createFile(filePath, { ignoreIfExists: true });
 
