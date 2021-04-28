@@ -6,7 +6,7 @@
 import * as vscode from 'vscode';
 
 import { getFeatureFolders } from './utils/folders';
-import { createFolder } from './utils/sharedFunctions';
+import { createFolder } from './utils/shared_functions';
 
 /**
  * Shows an input box using window.showInputBox().
@@ -16,10 +16,8 @@ export async function createFeature() {
 		placeHolder: 'enter feature name',
   });
   
-  let i = 0;
 	const includeDotKeep = await vscode.window.showQuickPick(['yes', 'no'], {
-		placeHolder: 'include .keep',
-    onDidSelectItem: item => {}
+		placeHolder: 'include .keep'
 	});
 
   if (feature !== undefined) {
@@ -34,6 +32,7 @@ function createFolders(feature: string, includeDotKeep: boolean): void {
   if (vscode.workspace.workspaceFolders !== undefined) {
 
     for (let folder of getFeatureFolders()) {
+      //TODO: use path joing for this?
       createFolder('lib/features/' + feature + '/' + folder, includeDotKeep);
       createFolder('test/features/' + feature + '/' + folder, includeDotKeep);
     }
