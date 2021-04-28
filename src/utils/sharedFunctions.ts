@@ -1,18 +1,39 @@
 import * as vscode from 'vscode';
+const fs = require("fs");
+const path = require("path");
 
 import { getWorkspaceFolder } from './workspaceUtil';
 
-export function createFolder(path: string, includeDotKeep: boolean) {
-  const wsedit = new vscode.WorkspaceEdit();
-  
-  const wsPath = getWorkspaceFolder(undefined);
-  const filePath = vscode.Uri.file(wsPath + '/' + path + '/.keep');
-  wsedit.createFile(filePath, { ignoreIfExists: true });
+export function createFolder(folderPath: string, includeDotKeep: boolean) {
 
-  if (includeDotKeep === false) {
-    wsedit.deleteFile(filePath);
+  const fullPath = _getWorkspacePath(folderPath);
+
+  fs.mkdirSync(fullPath, { recursive: true });
+
+  if (includeDotKeep === true) {
+    _createFile(fullPath, ".keep", "");
   }
+}
 
-  vscode.workspace.applyEdit(wsedit);
-  
+export function createFile(folderPath: string, filename: string, content: string) :void { 
+  _createFile(_getWorkspacePath(folderPath), filename, content);
+};
+
+
+//only used internally
+function _createFile(folderPath: string, filename: string, content: string) : void {
+  fs.writeFile(path.join(folderPath, filename), content, (err: any) => {
+    if (err) {
+      return vscode.window.showErrorMessage(
+        "Failed to create boilerplate file!"
+      );
+    }
+    vscode.window.showInformationMessage("File created");
+  });
+}
+
+function _getWorkspacePath(newpath: string) : string {
+  const wsPath = getWorkspaceFolder();
+
+  return path.join(wsPath, newpath);
 }
