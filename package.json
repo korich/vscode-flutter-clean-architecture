@@ -25,6 +25,10 @@
 			{
 				"command": "korich-fca.setUp",
 				"title": "Flutter: Set Up Clean Architecture Project"
+			},
+			{
+				"command": "korich-fca.testing",
+				"title": "ZZZ test"
 			}
 		]
 	},

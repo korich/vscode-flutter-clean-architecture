@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 import { setUpProject } from './set_up';
 import { createFeature } from './feature_generator';
+import { testing } from './testing';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -14,6 +15,14 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposableSetUp);
 	context.subscriptions.push(disposableCreate);
+
+	
+	let disposableTest = vscode.commands.registerCommand('korich-fca.testing', () => {
+		testing();
+	});
+	
+	context.subscriptions.push(disposableTest);
+
 }
 
 // this method is called when your extension is deactivated
