@@ -10,7 +10,6 @@ export const getProjectName = (): string => {
   return pubspec.name;
 };
 
-
 function _loadPubspec(): any {
   const yaml = require('js-yaml');
   
