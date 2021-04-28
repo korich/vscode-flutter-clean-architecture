@@ -6,7 +6,7 @@
 import * as vscode from 'vscode';
 
 import { getFeatureFolders } from './utils/folders';
-import { createFolder } from './utils/sharedFunctions';
+import { createFolder } from './utils/shared_functions';
 
 /**
  * Shows an input box using window.showInputBox().

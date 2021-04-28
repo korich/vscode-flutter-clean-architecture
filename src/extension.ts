@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { setUpProject } from './setUp';
-import { createFeature } from './featureGenerator';
+import { setUpProject } from './set_up';
+import { createFeature } from './feature_generator';
 
 export function activate(context: vscode.ExtensionContext) {
 

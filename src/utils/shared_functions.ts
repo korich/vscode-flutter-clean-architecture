@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 const fs = require("fs");
 const path = require("path");
 
-import { getWorkspaceFolder } from './workspaceUtil';
+import { getWorkspaceFolder } from './workspace_util';
 
 export function createFolder(folderPath: string, includeDotKeep: boolean) {
 
