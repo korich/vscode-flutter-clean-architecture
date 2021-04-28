@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { getProjectName } from './utils/flutter_project_util';
-import { createFile } from './utils/shared_functions';
+import { createFile } from './utils/file_util';
 
 export async function testing() {
   
