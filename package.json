@@ -13,7 +13,8 @@
 	],
 	"activationEvents": [
 		"onCommand:korich-fca.createFeature",
-		"onCommand:korich-fca.setUp"
+		"onCommand:korich-fca.setUp",
+		"onCommand:korich-fca.testing"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -52,5 +53,8 @@
 		"mocha": "^7.1.2",
 		"typescript": "^3.8.3",
 		"vscode-test": "^1.3.0"
+	},
+	"dependencies": {
+		"js-yaml": "^3.14.1"
 	}
 }

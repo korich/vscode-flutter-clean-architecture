@@ -1,10 +1,8 @@
 import * as vscode from 'vscode';
-import { createFile } from './utils/shared_functions';
+import { getProjectName } from './utils/flutter_project_util';
 
 export async function testing() {
   
-
-  createFile('path', 'blar.txt', "hi");
-  
-  vscode.window.showErrorMessage('hi');
+  vscode.window.showErrorMessage(getProjectName());
 }
+

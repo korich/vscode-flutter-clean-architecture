@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-const fs = require("fs");
-const path = require("path");
+import fs = require("fs");
+import path = require("path");
 
 import { getWorkspaceFolder } from './workspace_util';
 

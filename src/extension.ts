@@ -16,7 +16,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposableSetUp);
 	context.subscriptions.push(disposableCreate);
 
-	
+	//TODO: remove this
 	let disposableTest = vscode.commands.registerCommand('korich-fca.testing', () => {
 		testing();
 	});
