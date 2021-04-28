@@ -27,7 +27,7 @@ function _createFile(folderPath: string, filename: string, content: string) : vo
   fs.writeFile(path.join(folderPath, filename), content, (err: any) => {
     if (err) {
       return vscode.window.showErrorMessage(
-        "Failed to create boilerplate file!"
+        "Failed to create file!"
       );
     }
     vscode.window.showInformationMessage("File created");
