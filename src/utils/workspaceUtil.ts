@@ -1,7 +1,9 @@
-import { WorkspaceFolder } from "vscode";
+import * as vscode from 'vscode';
 
-export const getWorkspaceFolder = (folders: WorkspaceFolder[] | undefined): string => {
-  if (!folders) {
+export const getWorkspaceFolder = (): string => {
+  const folders = vscode.workspace.workspaceFolders;
+
+  if (folders === undefined) {
     return '';
   }
 
