@@ -4,16 +4,21 @@ import { createFile } from './utils/file_util';
 
 
 import fs = require("fs");
+import { getPackageVersion } from './utils/pubdev_utils';
 
 export async function testing() {
   
-  let content = 'hello';
+  // let content = 'hello';
 
 
-  createFile('lib/new/mpre/hi/', 'testing.dart', content);
+  // createFile('lib/new/mpre/hi/', 'testing.dart', content);
 
 
-  vscode.window.showErrorMessage(getProjectName());
+  // vscode.window.showErrorMessage(getProjectName());
+
+  let result = await getPackageVersion('equatable');
+
+  vscode.window.showErrorMessage(result);
 
   
 }
