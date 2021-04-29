@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-import { getSetUpFolders } from './utils/folders';
+import { getSetUpFolders } from './settings/folders';
 import { createFile, createFolder } from './utils/file_util';
 import { getFailuresTemplate, getFixtureReaderTemplate, getUsecaseTemplate } from './templates/core_templates';
 
