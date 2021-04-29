@@ -22,7 +22,7 @@ class NoParams extends Equatable {
 }
 
 export function getFailuresTemplate() {
-  return `iimport 'package:equatable/equatable.dart';
+  return `import 'package:equatable/equatable.dart';
 
 abstract class Failure extends Equatable {
   // If the subclasses have some properties, they'll get passed to this constructor
