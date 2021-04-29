@@ -1,11 +1,27 @@
 import * as vscode from 'vscode';
-import { getProjectName } from './utils/flutter_project_util';
+import { addPackages, getProjectName } from './utils/flutter_project_util';
 import { createFile } from './utils/file_util';
+
+
+import fs = require("fs");
+import { getPackageVersion } from './utils/pubdev_util';
 
 export async function testing() {
   
-  createFile('lib/new/mpre/hi/', 'test.dart', "hello");
+  // let content = 'hello';
 
-  vscode.window.showErrorMessage(getProjectName());
+
+  // createFile('lib/new/mpre/hi/', 'testing.dart', content);
+
+
+  // vscode.window.showErrorMessage(getProjectName());
+
+  let result = await getPackageVersion('equatable');
+
+  addPackages();
+
+  vscode.window.showErrorMessage(result);
+
+  
 }
 
