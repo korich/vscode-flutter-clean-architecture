@@ -3,6 +3,7 @@ import * as vscode from 'vscode';
 import { getSetUpFolders } from './settings/folders';
 import { createFile, createFolder } from './utils/file_util';
 import { getFailuresTemplate, getFixtureReaderTemplate, getUsecaseTemplate } from './templates/core_templates';
+import { addPackages } from './utils/flutter_project_util';
 
 export async function setUpProject() {
 	if (vscode.workspace.workspaceFolders !== undefined) {
@@ -11,10 +12,11 @@ export async function setUpProject() {
       placeHolder: 'include .keep'
     });
 
-    const pubspecAssist = vscode.extensions.getExtension("jeroen-meijer.pubspec-assist");
-
     _createFolders(includeDotKeep === 'yes');
     _createFiles();
+
+    //This will add any required dart packages
+    addPackages();
 
   }  else {
     vscode.window.showErrorMessage('No active workspace.');
