@@ -1,7 +1,8 @@
 import * as vscode from 'vscode';
 
 import { getSetUpFolders } from './utils/folders';
-import { createFolder } from './utils/file_util';
+import { createFile, createFolder } from './utils/file_util';
+import { getFailuresTemplate, getFixtureReaderTemplate, getUsecaseTemplate } from './templates/core_template';
 
 /**
  * Shows an input box using window.showInputBox().
@@ -21,6 +22,11 @@ function createFolders(includeDotKeep: boolean): void {
       createFolder('lib/' + folder, includeDotKeep);
       createFolder('test/' + folder, includeDotKeep);
     }
+
+    //Create the default classes
+    createFile('lib/core/usecases', getUsecaseTemplate(), 'usecase.dart');
+    createFile('lib/core/error', getFailuresTemplate(), 'failures.dart');
+    createFile('test/fixtures', getFixtureReaderTemplate(), 'fixture_reader.dart');
 
   } else {
     vscode.window.showErrorMessage('No active workspace.');

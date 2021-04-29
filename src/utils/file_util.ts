@@ -24,14 +24,18 @@ function _createFile(folderPath: string, filename: string, content: string) : vo
   //Create the folder if it does not exist.
   _createFolder(folderPath);
 
-  fs.writeFile(path.join(folderPath, filename), content, (err: any) => {
-    if (err) {
-      return vscode.window.showErrorMessage(
-        "Failed to create file!"
-      );
-    }
-    vscode.window.showInformationMessage("File created");
-  });
+  let filePath = path.join(folderPath, filename);
+
+  if (!fs.existsSync(filePath)) { //Don't create the file if it already exists
+    fs.writeFile(filePath, content, (err: any) => {
+      if (err) {
+        return vscode.window.showErrorMessage(
+          "Failed to create file!"
+        );
+      }
+      vscode.window.showInformationMessage("File created");
+    });
+  }
 }
 
 function _createFolder(folderPath: string) : void {
