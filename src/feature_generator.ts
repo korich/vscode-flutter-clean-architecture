@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 
-import { getFeatureFolders } from './utils/folders';
+import { getFeatureFolders } from './settings/folders';
 import { createFolder } from './utils/file_util';
 
 export async function createFeature() {
