@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import path = require("path");
 import fs = require("fs");
 
-import { getWorkspaceFolder } from './workspace_util';
+import { getWorkspaceFolder } from '../shared_utils/workspace_util';
 import { getRequiredPackages } from '../settings/packages';
 import { getPackageVersion } from './pubdev_util';
 

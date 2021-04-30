@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { addPackages, getProjectName } from './utils/flutter_project_util';
-import { createFile } from './utils/file_util';
+import { createFile } from './shared_utils/file_util';
 
 
 import fs = require("fs");

@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 import { getSetUpFolders } from './settings/folders';
-import { createFile, createFolder } from './utils/file_util';
+import { createFile, createFolder } from './shared_utils/file_util';
 import { getFailuresTemplate, getFixtureReaderTemplate, getUsecaseTemplate } from './templates/core_templates';
 import { addPackages } from './utils/flutter_project_util';
 

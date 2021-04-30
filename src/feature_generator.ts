@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 
 import { getFeatureFolders } from './settings/folders';
-import { createFolder } from './utils/file_util';
+import { createFolder } from './shared_utils/file_util';
 
 export async function createFeature() {
 	const feature = await vscode.window.showInputBox({
