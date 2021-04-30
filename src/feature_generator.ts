@@ -1,19 +1,22 @@
 import * as vscode from 'vscode';
+import * as changeCase from "change-case";
 
 import { getFeatureFolders } from './settings/folders';
 import { createFolder } from './shared_utils/file_util';
 
 export async function createFeature() {
-	const feature = await vscode.window.showInputBox({
-		placeHolder: 'enter feature name',
+	const featureName = await vscode.window.showInputBox({
+		placeHolder: 'Enter feature name (add spaces between words ie "special users"):',
   });
   
 	const includeDotKeep = await vscode.window.showQuickPick(['yes', 'no'], {
 		placeHolder: 'include .keep'
 	});
 
-  if (feature !== undefined) {
-    createFolders(feature, includeDotKeep === 'yes');
+  if (featureName !== undefined) {
+    
+    const snakeCaseFeatureName = changeCase.snakeCase(featureName.toLowerCase());
+    createFolders(snakeCaseFeatureName, includeDotKeep === 'yes');
   } else {
     vscode.window.showErrorMessage('No feature name entered.');
   }
